@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Twitter app</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="{{ url_for('static', filename= 'style.css') }}" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h3 class="heading">Twitter app by Datavengers!</h3>
+        <ul class="nav nav-tabs">
+            <li class="{{ 'active' if active_tab == 'home' }}">
+                <a href="{{ url_for('home') }}">Home</a>
+            </li>
+            <li class="{{ 'active' if active_tab == 'timeline' }}">
+                <a href="{{ url_for('timeline') }}">My timeline</a>
+            </li>
+            <li class="{{ 'active' if active_tab == 'post_tweet' }}">
+                <a href="{{ url_for('post_tweet') }}">Post tweet</a>
+            </li>
+            <li class="{{ 'active' if active_tab == 'delete_tweet' }}">
+                <a href="{{ url_for('delete_tweet') }}">Delete tweet</a>
+            </li>
+            <li class="{{ 'active' if active_tab == 'search_tweets' }}">
+                <a href="{{ url_for('search_tweets') }}">Search tweets</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
+

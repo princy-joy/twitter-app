@@ -1,0 +1,19 @@
+{% extends "template.html" %}
+{% block content %}
+    <div id="post" class="tab-pane">
+        <div class="card">
+            <div class="form-group">
+                <form class="form-inline" method="GET" action="{{ url_for('post_tweet') }}">
+                    <textarea class="form-control" placeholder="What's on your mind?" name="tweet_text"></textarea>
+                    <input class="btn btn-primary submit-btn" type="submit" value="Tweet">
+                </form>
+            </div>
+        </div>
+        {% if status == 'posted' %}
+            <div class="alert alert-success message-box">
+                <p>Tweet is posted!</p>
+            </div>
+        {% endif %}
+
+    </div>
+{% endblock %}

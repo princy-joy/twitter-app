@@ -1,0 +1,14 @@
+{% extends "template.html" %}
+{% block content %}
+    <div id="delete" class="tab-pane">
+        <div class="card">
+            <div class="form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Enter tweet id to delete a tweet</span>
+                </div>
+                <input type="text" class="form-control" placeholder="TweetId" >
+                <input class="btn btn-primary submit-btn" type="submit" value="Delete">
+            </div>
+        </div>
+    </div>
+{% endblock %}

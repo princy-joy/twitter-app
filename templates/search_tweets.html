@@ -1,0 +1,23 @@
+{% extends "template.html" %}
+{% block content %}
+    <div id="search" class="tab-pane">
+        <div class="card">
+            <div class="form-group">
+                <form class="form-inline" method="GET" action="{{ url_for('search_tweets') }}">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Enter keyword to search public tweets</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Search keyword" name="search_key">
+                    <input class="btn btn-primary submit-btn" type="submit" value="Search">
+                </form>
+            </div>
+        </div>
+        {% for tweet in public_tweets %}
+          <div class="card">
+              <div class="card-text">
+              {{ tweet._json.text }}
+              </div>
+          </div>
+       {% endfor %}
+    </div>
+{% endblock %}
